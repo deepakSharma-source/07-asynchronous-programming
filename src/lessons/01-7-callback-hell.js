@@ -1,6 +1,7 @@
 function fetchData(callback) {
   setTimeout(function () {
     // Log "Data fetched!" to the console
+    console.log("Data fetched");
     // Invoke the callback function
   }, 1000);
 }
