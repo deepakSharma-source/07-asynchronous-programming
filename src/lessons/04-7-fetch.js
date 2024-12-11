@@ -8,7 +8,17 @@
  * If the response is not ok, throw an error. Use try/catch.
  *
  */
-async function fetchDataAsync() {}
+async function fetchDataAsync() {
+  try {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/posts/3"
+    );
+    const data = await response.json()
+    console.log(data);
+  } catch (error) {
+    
+  }
+}
 
 async function fetchDataAndProcess() {
   try {

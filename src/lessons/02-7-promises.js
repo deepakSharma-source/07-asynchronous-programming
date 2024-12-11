@@ -2,7 +2,9 @@ function fetchDataPromise() {
   return new Promise((resolve) => {
     setTimeout(() => {
       // Log "Data fetched!" to the console
+      console.log("Data fetched")
       // Invoke the resolve function
+      resolve();
     }, 1000);
   });
 }
@@ -30,3 +32,6 @@ function displayData() {
  * Use .then() and .catch() to chain promises
  *
  *  */
+fetchDataPromise()
+.then(() => processDataPromise())
+.then(() => displayData()).catch((error) => console.error(error))

@@ -2,7 +2,9 @@ async function fetchDataAsync() {
   return new Promise(function (resolve) {
     setTimeout(function () {
       // Log "Data fetched!" to the console
+      console.log("Data fetched")
       // Invoke the resolve function
+      resolve();
     }, 1000);
   });
 }
@@ -30,6 +32,10 @@ function displayData() {
  * Use async/await syntax
  *
  *  */
-async function fetchDataAndProcess() {}
+async function fetchDataAndProcess() {
+  await fetchDataAsync();
+  await processDataAsync();
+  displayData();
+}
 
 fetchDataAndProcess();

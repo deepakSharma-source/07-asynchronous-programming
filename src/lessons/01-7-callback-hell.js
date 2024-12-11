@@ -1,8 +1,9 @@
 function fetchData(callback) {
   setTimeout(function () {
     // Log "Data fetched!" to the console
-    console.log("Data fetched");
+    console.log("Data fetched")
     // Invoke the callback function
+    callback();
   }, 1000);
 }
 
@@ -28,3 +29,11 @@ function displayData() {
  * https://dev.to/jerrycode06/callback-hell-and-how-to-rescue-it-ggj
  *
  *  */
+
+fetchData(function (){
+  processData(function (){
+    displayData();
+  });
+});
+
+
