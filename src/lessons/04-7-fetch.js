@@ -13,10 +13,14 @@ async function fetchDataAsync() {
     const response = await fetch(
       "https://jsonplaceholder.typicode.com/posts/3"
     );
+    if(!response.ok) {
+      throw new Error("Response is not okay")
+    }
     const data = await response.json()
-    console.log(data);
+    return data;
+    //console.log(data);
   } catch (error) {
-    
+    console.error(error)
   }
 }
 
@@ -24,6 +28,7 @@ async function fetchDataAndProcess() {
   try {
     const data = await fetchDataAsync();
     // Log the title of the post to the console here
+    console.log(data.title);
   } catch (error) {
     console.error("Error:", error);
   }
